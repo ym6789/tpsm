@@ -252,6 +252,11 @@ H:\AI\Anaconda3\envs\tpsm\lib\site-packages\torch\functional.py:504: UserWarning
 到了这里，执行完成！！！
 (tpsm) PS H:\AI\tpsm>
 查看路径：‪H:\AI\tpsm\result.mp4 ，这个是新生成的视频
+然后打开播放，发现图片是头像是替换了，但是视频的声音没有了
+起码来说，程序是执行了，抽空在来执行吧，希望大拿来指定指导，大家一起共同学习学习
+
+为此还特意花了6000刀配置了一台电脑~~~
+
 
 ```
 
