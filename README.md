@@ -154,7 +154,14 @@ win-inet-pton      1.1.0
 
 ```
 # 测试pytorch安装是否成功：
+```
+import torch
 
+print(torch.__version__)
+
+输出：2.1.2（这个版本后续可能会又一大堆的报错，那也没关系，先继续实施看）
+
+```
 
 
 
