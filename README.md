@@ -234,8 +234,23 @@ OSError: Failed to open file b'C:\\Users\\\xe5\x8d\x8e\xe5\xb8\x88\xe7\xa7\x91\x
 右键点击计算机 -> 属性 -> 高级系统设置 -> 环境变量
 
 关闭命令窗口重启（如果不行，就重启电脑再试试）
+```
+```
+继续执行：
+conda activate tpsm
+python demo.py --config config/vox-256.yaml --checkpoint checkpoints/vox.pth.tar --source_image assets/source.png --driving_video assets/driving.mp4
+
+H:\AI\Anaconda3\envs\tpsm\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+H:\AI\Anaconda3\envs\tpsm\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+H:\AI\Anaconda3\envs\tpsm\lib\site-packages\torch\functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at C:\cb\pytorch_1000000000000\work\aten\src\ATen\native\TensorShape.cpp:3527.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 169/169 [00:12<00:00, 13.58it/s]
 
 
+到了这里，就不能执行了，完犊子了！！！
+(tpsm) PS H:\AI\tpsm>
 
 ```
 
