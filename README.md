@@ -1,9 +1,13 @@
-首先，先祈求自己一次性部署成功！(但是往往事与愿违，在部署过程中，一大堆的环境及以来程序的安装，能让你疯到姥姥家，不信你跟着我一起试试）
+**首先，**先祈求自己一次性部署成功！(但是往往事与愿违，在部署过程中，一大堆的环境及以来程序的安装，能让你疯到姥姥家，不信你跟着我一起试试）
+
 #本部署参考：
+
 https://github.com/natlamir/tpsm
+
 https://github.com/yoyo-nb/Thin-Plate-Spline-Motion-Model
 
-#windows 10系统 专业版 实践步骤：
+
+**#windows 10系统 专业版 实践步骤：**
   #1.懂得上网：如果不懂上网，你会更加的抓狂，因为你的大量依赖库，都是会被告知无法下载，哈哈哈哈~~~，当然，能原生看到本文件的人，应该都懂得上网了吧
 
   #2.硬件基础：需要有一张N系列显卡，本人用于测试的是RTX3060 12G的显卡
@@ -16,6 +20,21 @@ https://github.com/yoyo-nb/Thin-Plate-Spline-Motion-Model
   tips:Anaconda3，具有一台系统搭建多个不懂运行环境的需求，比如你电脑里原来运行python2的程序，现在需要安装python3.9来运行本程序，那么你在不懂conda管理的时候，第一想法是吧python2给升级为python3.9,然后你可能要抓狂的是，当你安装完成python3.9后，发现原来python2的程序，都无法正常运行了，然后你又继续把python3.9给卸载重新安装python2,然后你就没有然后，然后你就想放弃本次安装，有种日了dog的感觉吧
 不过没有关系，只要你稍微了解下Anaconda,就能解决你要使用python3.9的目标了；
 
+### 安装步骤：（最好不要安装在C盘，安装程序尽量不要又空格的目录）
+1.安装Anaconda3，自行去官网下载安装，然后可以菜单通过它的powerShell Prompt，也可以直接cmd，然后cd到你需要安装该程序的目录下，我的是H:\AI目录
+2.创建环境
+```
+#创建虚拟环境
+conda create --name tpsm python=3.9 -y
+#切换到虚拟环境
+conda activate tpsm
+```
+
+3.安装PyTorch(我也不知道这是啥，反正后面这个是最折腾人的)
+ ```
+ conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia -y
+（这里我也搞不懂，我这边的cuda版本是12.3,也不知道是不是这里出问题了）
+```
 
 
 
