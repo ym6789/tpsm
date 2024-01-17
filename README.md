@@ -1,4 +1,9 @@
 **首先，**先祈求自己一次性部署成功！(但是往往事与愿违，在部署过程中，一大堆的环境及以来程序的安装，能让你疯到姥姥家，不信你跟着我一起试试）
+```
+我没有写过github.com的说明规范，看起来很不规则也是正常的，慢慢适应就可以了
+```
+
+
 
 #本部署参考：
 
@@ -7,14 +12,14 @@
 ### https://github.com/yoyo-nb/Thin-Plate-Spline-Motion-Model
 
 
-**#windows 10系统 专业版 实践步骤：**
-  #1.懂得上网：如果不懂上网，你会更加的抓狂，因为你的大量依赖库，都是会被告知无法下载，哈哈哈哈~~~，当然，能原生看到本文件的人，应该都懂得上网了吧
+### windows 10系统 专业版 实践步骤：**
+  ### 1.懂得上网：如果不懂上网，你会更加的抓狂，因为你的大量依赖库，都是会被告知无法下载，哈哈哈哈~~~，当然，能原生看到本文件的人，应该都懂得上网了吧
 
-  #2.硬件基础：需要有一张N系列显卡，本人用于测试的是RTX3060 12G的显卡
+  ### 2.硬件基础：需要有一张N系列显卡，本人用于测试的是RTX3060 12G的显卡
 
-  #3.驱动软件依赖：安装显卡驱动和工具包：CUDA，自定在 https://www.nvidia.cn/Download/Find.aspx?lang=cn 根据实际下载安装
+  ### 3.驱动软件依赖：安装显卡驱动和工具包：CUDA，自定在 https://www.nvidia.cn/Download/Find.aspx?lang=cn 根据实际下载安装
 
-  #4.多虚拟环境配置管理工具Anaconda3：用户Anaconda(conda命令)来创建一个虚拟环境，可以给这个虚拟环境命名，切换到该虚拟环境后，然后在虚拟环境安装所有的程序以及对应的依赖，在运行的过程中，就会自然引用该虚拟环境下的变量、命令和配置，完美解决一台系统下可以多个不同环境的目标；
+  ### 4.多虚拟环境配置管理工具Anaconda3：用户Anaconda(conda命令)来创建一个虚拟环境，可以给这个虚拟环境命名，切换到该虚拟环境后，然后在虚拟环境安装所有的程序以及对应的依赖，在运行的过程中，就会自然引用该虚拟环境下的变量、命令和配置，完美解决一台系统下可以多个不同环境的目标；
 
 
   tips:Anaconda3，具有一台系统搭建多个不懂运行环境的需求，比如你电脑里原来运行python2的程序，现在需要安装python3.9来运行本程序，那么你在不懂conda管理的时候，第一想法是吧python2给升级为python3.9,然后你可能要抓狂的是，当你安装完成python3.9后，发现原来python2的程序，都无法正常运行了，然后你又继续把python3.9给卸载重新安装python2,然后你就没有然后，然后你就想放弃本次安装，有种日了dog的感觉吧
@@ -75,8 +80,81 @@ typing_extensions  4.9.0
 urllib3            1.26.18
 wheel              0.41.2
 win-inet-pton      1.1.0
+
+
+
+
+安装requirements.txt文件的依赖组件
+(tpsm) PS H:\AI\tpsm> pip install -r requirements.txt
+
+(tpsm) PS H:\AI\tpsm> pip list
+Package            Version
+------------------ ----------
+Brotli             1.0.9
+certifi            2023.11.17
+cffi               1.14.6
+charset-normalizer 2.0.4
+colorama           0.4.6
+cryptography       41.0.7
+cycler             0.10.0
+decorator          5.1.0
+face-alignment     1.3.5
+filelock           3.13.1
+fsspec             2023.12.2
+gmpy2              2.1.2
+idna               3.4
+imageio            2.9.0
+imageio-ffmpeg     0.4.5
+Jinja2             3.1.2
+joblib             1.3.2
+kiwisolver         1.3.2
+llvmlite           0.39.1
+MarkupSafe         2.1.3
+matplotlib         3.4.3
+mkl-fft            1.3.8
+mkl-random         1.2.4
+mkl-service        2.4.0
+mpmath             1.3.0
+networkx           2.6.3
+numba              0.56.4
+numpy              1.20.3
+opencv-python      4.9.0.80
+pandas             1.3.3
+Pillow             9.2.0
+pip                23.3.1
+pycparser          2.20
+pyOpenSSL          23.2.0
+pyparsing          2.4.7
+PySocks            1.7.1
+python-dateutil    2.8.2
+pytz               2021.1
+PyWavelets         1.1.1
+PyYAML             5.4.1
+requests           2.31.0
+scikit-image       0.18.3
+scikit-learn       1.0
+scipy              1.7.1
+setuptools         68.2.2
+six                1.16.0
+sympy              1.12
+threadpoolctl      3.2.0
+tifffile           2023.12.9
+torch              2.1.2
+torchaudio         2.1.2
+torchvision        0.16.2
+tqdm               4.62.3
+typing_extensions  4.9.0
+urllib3            1.26.18
+wheel              0.41.2
+win-inet-pton      1.1.0
 (tpsm) PS H:\AI\tpsm>
+
+
+
+
 ```
+# 测试pytorch安装是否成功：
+
 
 
 
