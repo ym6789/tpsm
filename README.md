@@ -197,7 +197,10 @@ Mode                 LastWriteTime         Length Name
 
 # 开始执行命令：（到这里后，应该会觉得报错，这个是安装大量的github项目告诉我的经验，虽然还没有执行）
 ```
-(tpsm) PS H:\AI\tpsm\checkpoints> python demo.py --config config/vox-256.yaml --checkpoint checkpoints/vox.pth.tar --source_image assets/source.png --driving_video assets/driving.mp4
+python demo.py --config config/vox-256.yaml --checkpoint checkpoints/vox.pth.tar --source_image assets/source.png --driving_video assets/driving.mp4
+```
+
+```
 H:\AI\Anaconda3\envs\tpsm\python.exe: can't open file 'H:\AI\tpsm\checkpoints\demo.py': [Errno 2] No such file or directory
 (tpsm) PS H:\AI\tpsm\checkpoints> cd ..
 (tpsm) PS H:\AI\tpsm> python demo.py --config config/vox-256.yaml --checkpoint checkpoints/vox.pth.tar --source_image assets/source.png --driving_video assets/driving.mp4
@@ -229,6 +232,8 @@ OSError: Failed to open file b'C:\\Users\\\xe5\x8d\x8e\xe5\xb8\x88\xe7\xa7\x91\x
 (tpsm) PS H:\AI\tpsm>
 查询了下，然后告知说因为有中文路径，修改了环境变量中的temp，所以参考链接https://blog.csdn.net/datao3022/article/details/109186403
 右键点击计算机 -> 属性 -> 高级系统设置 -> 环境变量
+
+关闭命令窗口重启（如果不行，就重启电脑再试试）
 
 
 
