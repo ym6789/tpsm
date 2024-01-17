@@ -28,12 +28,54 @@ https://github.com/yoyo-nb/Thin-Plate-Spline-Motion-Model
 conda create --name tpsm python=3.9 -y
 #切换到虚拟环境
 conda activate tpsm
+下载模型程序
+
+git clone https://github.com/ym6789/tpsm.git tpsm
+cd tpsm
 ```
 
 3.安装PyTorch(我也不知道这是啥，反正后面这个是最折腾人的)
  ```
  conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia -y
 （这里我也搞不懂，我这边的cuda版本是12.3,也不知道是不是这里出问题了）
+
+安装完成后，我查看下是这样的：
+(tpsm) PS H:\AI\tpsm> pip list
+Package            Version
+------------------ ----------
+Brotli             1.0.9
+certifi            2023.11.17
+cffi               1.16.0
+charset-normalizer 2.0.4
+cryptography       41.0.7
+filelock           3.13.1
+gmpy2              2.1.2
+idna               3.4
+Jinja2             3.1.2
+MarkupSafe         2.1.3
+mkl-fft            1.3.8
+mkl-random         1.2.4
+mkl-service        2.4.0
+mpmath             1.3.0
+networkx           3.1
+numpy              1.26.3
+Pillow             10.0.1
+pip                23.3.1
+pycparser          2.21
+pyOpenSSL          23.2.0
+PySocks            1.7.1
+PyYAML             6.0.1
+requests           2.31.0
+setuptools         68.2.2
+sympy              1.12
+torch              2.1.2
+torchaudio         2.1.2
+torchvision        0.16.2
+typing_extensions  4.9.0
+urllib3            1.26.18
+wheel              0.41.2
+win-inet-pton      1.1.0
+(tpsm) PS H:\AI\tpsm>
 ```
 
 
