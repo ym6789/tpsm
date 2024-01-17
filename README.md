@@ -163,6 +163,80 @@ print(torch.__version__)
 
 ```
 
+### 下载模型数据集 Datasets
+tips:具体每一个数据集主要偏向与那个领域，未研究
+
+1) **MGif**. Follow [Monkey-Net](https://github.com/AliaksandrSiarohin/monkey-net).
+
+2) **TaiChiHD** and **VoxCeleb**. Follow instructions from [video-preprocessing](https://github.com/AliaksandrSiarohin/video-preprocessing). 
+
+3) **TED-talks**. Follow instructions from [MRAA](https://github.com/snap-research/articulated-animation).
+
+Here are **VoxCeleb**, **TaiChiHD** and **TED-talks**  pre-processed datasets used in the paper. [Baidu Yun](https://pan.baidu.com/s/1HKJOtXBIiP_tlLiFbzn3oA?pwd=x7xv)
+Download all files under the folder, then merge the files and decompress, for example:
+```bash
+
+cat vox.tar.* > vox.tar
+tar xvf vox.tar
+
+下载后，把文件解压到H:\AI\tpsm\checkpoints
+
+(tpsm) PS H:\AI\tpsm\checkpoints> dir
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         2024/1/12     20:26     1359827700 drive-download-20240112T122126Z-001.zip
+------          2022/5/2     16:27      306156401 mgif.pth.tar
+------          2022/5/2     16:27      350993469 taichi.pth.tar
+------          2022/5/2     16:27      350993469 ted.pth.tar
+------          2023/7/8      2:04         667037 Thin-Plate-Spline-Motion-Model.ipynb
+------          2022/5/2     16:27      350993469 vox.pth.tar
+
+
+```
+# 素材准备：找一个某人的一寸头像照片(png)，放在assets文件夹下，替换source.png文件
+
+# 开始执行命令：（到这里后，应该会觉得报错，这个是安装大量的github项目告诉我的经验，虽然还没有执行）
+```
+(tpsm) PS H:\AI\tpsm\checkpoints> python demo.py --config config/vox-256.yaml --checkpoint checkpoints/vox.pth.tar --source_image assets/source.png --driving_video assets/driving.mp4
+H:\AI\Anaconda3\envs\tpsm\python.exe: can't open file 'H:\AI\tpsm\checkpoints\demo.py': [Errno 2] No such file or directory
+(tpsm) PS H:\AI\tpsm\checkpoints> cd ..
+(tpsm) PS H:\AI\tpsm> python demo.py --config config/vox-256.yaml --checkpoint checkpoints/vox.pth.tar --source_image assets/source.png --driving_video assets/driving.mp4
+H:\AI\Anaconda3\envs\tpsm\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+H:\AI\Anaconda3\envs\tpsm\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+H:\AI\Anaconda3\envs\tpsm\lib\site-packages\torch\functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at C:\cb\pytorch_1000000000000\work\aten\src\ATen\native\TensorShape.cpp:3527.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+  0%|                                                                                                                                                                                                               | 0/169 [00:00<?, ?it/s]AttributeError: 'NoneType' object has no attribute 'close'
+Exception ignored in: 'scipy.spatial.qhull._Qhull.__dealloc__'
+Traceback (most recent call last):
+  File "H:\AI\tpsm\demo.py", line 25, in relative_kp
+    source_area = ConvexHull(kp_source['fg_kp'][0].data.cpu().numpy()).volume
+AttributeError: 'NoneType' object has no attribute 'close'
+  0%|                                                                                                                                                                                                               | 0/169 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "H:\AI\tpsm\demo.py", line 179, in <module>
+    predictions = make_animation(source_image, driving_video, inpainting, kp_detector, dense_motion_network, avd_network, device = device, mode = opt.mode)
+  File "H:\AI\tpsm\demo.py", line 86, in make_animation
+    kp_norm = relative_kp(kp_source=kp_source, kp_driving=kp_driving,
+  File "H:\AI\tpsm\demo.py", line 25, in relative_kp
+    source_area = ConvexHull(kp_source['fg_kp'][0].data.cpu().numpy()).volume
+  File "qhull.pyx", line 2434, in scipy.spatial.qhull.ConvexHull.__init__
+  File "qhull.pyx", line 269, in scipy.spatial.qhull._Qhull.__init__
+  File "messagestream.pyx", line 36, in scipy._lib.messagestream.MessageStream.__init__
+OSError: Failed to open file b'C:\\Users\\\xe5\x8d\x8e\xe5\xb8\x88\xe7\xa7\x91\xe6\x95\x99\\AppData\\Local\\Temp\\scipy-hh_y9mwf'
+
+(tpsm) PS H:\AI\tpsm>
+查询了下，然后告知说因为有中文路径，修改了环境变量中的temp，所以参考链接https://blog.csdn.net/datao3022/article/details/109186403
+右键点击计算机 -> 属性 -> 高级系统设置 -> 环境变量
+
+
+
+```
+
+
+
+
 
 
 # [CVPR2022] Thin-Plate Spline Motion Model for Image Animation
